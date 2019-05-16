@@ -8,9 +8,10 @@ class Actor < ActiveRecord::Base
   end
 
   def list_roles
+    array = []
     role = self.characters.collect{|c|c.name}
     show = self.shows.collect {|s|s.name}
-    combine = "#{role} #{show}"
+    array = role.concat show
     combine.join(" - ")
     # binding.pry
   end
