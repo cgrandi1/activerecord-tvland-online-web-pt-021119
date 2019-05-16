@@ -1,3 +1,4 @@
+require 'pry'
 class Actor < ActiveRecord::Base
   has_many :characters
   has_many :shows, through: :characters
@@ -7,7 +8,7 @@ class Actor < ActiveRecord::Base
   end
 
   def list_roles
-    role = self.show_ids
+    role = self.characters
     role.collect {|r| r.characters}
   end
 end
