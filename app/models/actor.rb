@@ -13,8 +13,7 @@ class Actor < ActiveRecord::Base
     show = self.shows.collect {|s|s.name}
     combine = role.concat show
     arrays << combine.join(" - ")
-    binding.pry
-    arrays
     # binding.pry
+    arrays
   end
 end
