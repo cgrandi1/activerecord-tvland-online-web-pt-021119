@@ -9,9 +9,9 @@ class Actor < ActiveRecord::Base
 
   def list_roles
     role = self.characters.collect{|c|c.name}
-    show = self.shows.collect {|s|s.names}
+    show = self.shows.collect {|s|s.name}
     combine = "#{role} - #{show}"
-    combine 
+    combine
     # binding.pry
   end
 end
